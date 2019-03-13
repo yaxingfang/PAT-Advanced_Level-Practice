@@ -66,7 +66,7 @@ ZOE1
 
 ### Code
 
-*此题一开始使用l两个 vector，一个  vector 存储学生信息，另一个 vector 存储每道题的信息，vector[1] ~ vector[k] 存储每道题里面的node*
+*此题一开始使用两个 vector，一个  vector 存储学生信息，另一个 vector 存储每道题的信息，vector[1] ~ vector[k] 存储每道题里面的node*
 
 **结果：内存超出**
 
