@@ -114,7 +114,7 @@ int main () {
 
 **结果：AC**
 
-```++
+```C++
 #include <cstdio>
 /*将遍历的每个人的下标放进name数组，输出的时候按下标输出对应的name*/ 
 #include <iostream>
