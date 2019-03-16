@@ -48,30 +48,30 @@ string a2[12] = {"tam", "hel", "maa", "huh", "tou", "kes", "hei", "elo", "syy", 
 //高位：对应 x / 13 - 1 下标 
 
 int main () {
-	int n;				//n行 
+	int n;			//n行 
 	string temp;		//temp表示当前字符串
 	cin>>n;
 	getchar();
 	for (int i = 0; i < n; i++) {
 		getline(cin, temp);	
-		int len = temp.length();					//当前字符串长度 
+		int len = temp.length();			//当前字符串长度 
 		int a = 0;									
 		if (temp[0] >= '0' && temp[0] <= '9') {		//这是数字 
 			for (int j = 0; j < len; j++) {
-				a = a * 10 + temp[j] - '0';			//将字符串转成整型a，再到相应数组里面找对应的火星文string 
+				a = a * 10 + temp[j] - '0';	//将字符串转成整型a，再到相应数组里面找对应的火星文string 
 			}
-			if (a < 13) {							//比13小，只输出低位 
+			if (a < 13) {				//比13小，只输出低位 
 				cout<<a1[a]<<endl;
-			} else if (a % 13 == 0) {				//整数倍只输出高位 
+			} else if (a % 13 == 0) {		//整数倍只输出高位 
 				cout<<a2[a / 13 - 1]<<endl;
-			} else {								//输出 高位 低位 
+			} else {				//输出 高位 低位 
 				cout<<a2[a /13 - 1]<<" "<<a1[a % 13]<<endl;
 			}
 		}
-		else {										//这是火星文字符串 
-			int num = 0;							//num存储最终输出的整型数字 
-			for (int i = 0; i < len; i += 4) {		//处理前半段012位和后半段456位 
-				string ans = ""; 					//ans存储处理后的字符串 
+		else {						//这是火星文字符串 
+			int num = 0;				//num存储最终输出的整型数字 
+			for (int i = 0; i < len; i += 4) {	//处理前半段012位和后半段456位 
+				string ans = ""; 		//ans存储处理后的字符串 
 				ans = ans + temp[i] + temp[i + 1] + temp[i + 2];
 				for (int j = 0; j < 13; j++) {
 					if (ans == a1[j]) {				
