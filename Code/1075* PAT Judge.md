@@ -85,7 +85,7 @@ int main () {
 	vector<node> v(n + 1);		//v存储结点1~n 
 	for (int i = 1; i <= n; i++) {
 		v[i].score.resize(k + 1, -1);
-	}							//score初始化为-1 
+	}				//score初始化为-1 
 	vector<int> full(k + 1);	//题目满分信息 
 	for (int i = 1; i <= k; i++) {
 		scanf ("%d", &full[i]);
@@ -94,7 +94,7 @@ int main () {
 		scanf ("%d%d%d", &id, &num, &score);
 		v[id].id = id;
 		v[id].score[num] = max (v[id].score[num], score);
-		if (score != -1) v[id].flag = true;						//这个题目有提交记录 
+		if (score != -1) v[id].flag = true;			//这个题目有提交记录 
 		else if (v[id].score[num] == -1) v[id].score[num] = -2;	//每次都是未通过编译器的那门课分数置为-2 
 	}
 	for (int i = 1; i <= n; i++) {
