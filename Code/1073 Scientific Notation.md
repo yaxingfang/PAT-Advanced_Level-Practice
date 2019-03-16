@@ -45,21 +45,21 @@ int main () {
 	char str[10010] ;
 	scanf ("%s", str) ;
 	int len=strlen(str) ;
-	if (str[0] == '-') printf ("-") ;   //若是负数先输出负号 
-	int pos=0, exp=0 ;					//pos记录E的位置 exp记录次方数 
+	if (str[0] == '-') printf ("-") ;		//若是负数先输出负号 
+	int pos=0, exp=0 ;				//pos记录E的位置 exp记录次方数 
 	while (str[pos]!='E') {
 		pos ++ ;
 	}
-	for (int i=pos+2; i<len; i++) {		//算出exp 
+	for (int i=pos+2; i<len; i++) {			//算出exp 
 		exp = exp * 10+(str[i]-'0');
 	}
-	if (exp==0) {						//exp为0 则直接输出第1位到第pos-1位的字符 
+	if (exp==0) {					//exp为0 则直接输出第1位到第pos-1位的字符 
 		for (int i=1; i<pos; i++) {
 			printf ("%c", str[i]) ;
 		}
 	}
 	if (str[pos+1]=='-') {				//E后面一位是'-'负号 
-		printf ("0.") ;					//先输出0. 以及exp-1个0 再把前面的所有数字输出 
+		printf ("0.") ;				//先输出0. 以及exp-1个0 再把前面的所有数字输出 
 		for (int i=0; i<exp-1; i++) {
 			printf ("0") ;
 		}
